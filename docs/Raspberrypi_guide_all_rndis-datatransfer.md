@@ -29,9 +29,9 @@
 <a name="Step-1-Overview"></a>
 ## 소개
 
-일반적으로 LPWAN(Low-Power Wide-Area Network)은 저전력 장거리 통신이라는 특성으로 인해 Data Rate이 낮으며 아래 표에서 LPWAN 기술의 최대 전송 속도가 12Bytes~ 375Kbps인 것을 확인할 수 있습니다.
+일반적으로 LPWAN(Low-Power Wide-Area Network)은 저전력 장거리 통신이라는 특성으로 인해 Data Rate이 낮으며, 아래 표와 같이 LPWAN 통신 방식들은 최대 12bps~ 375Kbps의 전송 속도를 지원합니다.
 
-LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 보다 최대 전송 속도가 비교적 높기 때문에 실시간 트래킹 서비스 또는 사진 전송, 생체 정보와 같은 중용량 및 실시간 응용에 사용하기 적합합니다.
+LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 대비 높은 전송 속도를 지원 가능한 특성 덕분에 실시간 트래킹 서비스 또는 사진 전송, 생체정보 전송과 같은 중용량 및 실시간 응용에 사용하기 적합합니다.
 
 ![][1]
 
@@ -133,7 +133,8 @@ def resetProgressbar(self):
 <a name="Step-4-Verification"></a>
 ## 속도 검증
 
- 아래 표와 같은 형태로 총 50번 테스트를 진행하였으며, 평균 데이터 전송률은 298.37bps 이었습니다. LoRa Cat.M1 최고 전송 속도에 비해 약 80% 정도의 속도로 데이터를 보낼 수 있는 것을 확인할 수 있었습니다.
+ 아래 표와 같은 형태로 총 50번 테스트를 진행하였으며, 평균 데이터 전송률은 298.37Kbps 입니다.
+ 해당 테스트 결과는 LTE Cat.M1의 이론 상 전송 속도의 약 80% 정도 수준이며, 다른 LPWAN 통신 방식에 비해 월등한 속도 차이를 보입니다.
 
 ![][4]
 
@@ -154,7 +155,7 @@ LTE Cat.M1의 RNDIS 모드를 활용하면 LPWAN 통신 중 가장 빠른 속도
  [link-github]: https://github.com/stkim92/LTECatM1-RaspberryPi-Photo-Transfer-Application
  [link-youtube]: https://youtu.be/xJbm8BLaym0
 
- [1]: ./imgs/Raspberry_pi_guide_picture_1.png
+ [1]: ./imgs/Raspberry_pi_guide_picture_1.PNG
  [2]: ./imgs/Raspberry_pi_guide_picture_2.png
  [3]: ./imgs/Raspberry_pi_guide_picture_3.png
- [4]: ./imgs/Raspberry_pi_guide_picture_4.png
+ [4]: ./imgs/Raspberry_pi_guide_picture_4.PNG
