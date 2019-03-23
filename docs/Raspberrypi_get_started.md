@@ -19,7 +19,7 @@ Raspberry Pi를 이용하면 Cat.M1 모듈의 RNDIS(Remote Network Driver Interf
 UART 인터페이스를 통해 AT 커맨드를 이용하여 데이터 송수신을 하면 UART 인터페이스 속도의 제한이 있기 때문에 Cat.M1이 제공하는 최대 속도를 사용할 수 없습니다. 그러나, RNDIS 기능을 활용할 경우 USB 인터페이스를 사용하기 때문에 Cat.M1 이 제공하는 최대 속도인 375kbps 와 근접하게 사용할 수 있습니다.
 
 
-** 문서의 주요 내용 **
+**문서의 주요 내용**
 
 이 문서는 **[Raspberry Pi][link-raspberry-pi]** 를 기반으로 Cat.M1 장치의 개발 환경 구축 과정에 대해 설명합니다.
 
