@@ -53,5 +53,5 @@ Raspberry Pi 및 PC에서 동작 시킬 수 있는 예제 코드가 위치합니
 [hw-raspberrypi-connect-qc01]: ./docs/imgs/hw/wiot-shield-qc01-raspberrypi.png
 [hw-raspberrypi-connect-wm01]: ./docs/imgs/hw/wiot-shield-wm01-raspberrypi.png
 
-[raspberrypi-get-started]: ./Raspberrypi_get_started.md
-[raspberrypi-guide-bg96-rndis]: ./Raspberrypi_guide_all_rndis-datatransfer.md
+[raspberrypi-get-started]: ./docs/Raspberrypi_get_started.md
+[raspberrypi-guide-bg96-rndis]: ./docs/Raspberrypi_guide_all_rndis-datatransfer.md
