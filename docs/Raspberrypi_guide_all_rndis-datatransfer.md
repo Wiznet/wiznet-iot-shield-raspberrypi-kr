@@ -138,13 +138,6 @@ def resetProgressbar(self):
 
 ![][4]
 
-<a name="Step-5-Finally"></a>
-## 마치며
-
- IoT 분야가 확대되며 LPWAN 기술 응용범위가 기존의 작은 센서 데이터를 보내거나 모니터링 하는 수준의 응용이 아닌 사진을 전송하거나 실시간 위치 추적을 하는 등의 응용으로 늘어나고 있습니다.
-
-LTE Cat.M1의 RNDIS 모드를 활용하면 LPWAN 통신 중 가장 빠른 속도의 데이터 전송이 가능하므로, LoRa 혹은 NB-IoT 기술로 구현하기 어려운 중용량 데이터 전송 응용에 널리 활용 할 수 있습니다.
-
 
  [raspberry-pi-getting-started]: https://
  [skt-iot-portal]: https://www.sktiot.com/iot/developer/guide/guide/catM1/menu_05/page_01
