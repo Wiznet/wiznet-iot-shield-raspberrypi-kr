@@ -35,15 +35,19 @@ LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 대비 높은 전송 속도를 지원 
 
 ![][1]
 
-본 가이드에서는 Raspberry Pi와 WIZnet IoT Shield Cat.M1 보드를 이용하여 사진 전송이 가능한지 확인하고 속도를 검증해보도록 하겠습니다.
+본 가이드에서는 Raspberry Pi와 WIZnet IoT Shield Cat.M1 보드를 기반으로 다음 내용을 다룹니다.
+* Cat.M1 망의 이미지 데이터 전송을 위한 Raspberry Pi 클라이언트 및 PC GUI 프로그램 구현
+* RNDIS 모드를 활용한 Cat.M1 망의 데이터 전송 성능 측정
 
 
 <a name="Step-2-SourceCode"></a>
 ## 주요 소스 코드
 
-### 1. RaspberryPi Client
+### 1. Raspberry Pi Client
 
-Raspberry Pi에서는 Python 2.72 버전을 사용하며, 국내 SK Telecom과에서 서비스 중인 Cat.M1의 경우 IPv6 주소만 사용하므로 서버 IPv4 주소를 다음과 같이 변환하여 사용해야 합니다.
+Raspberry Pi의 이미지 전송 Client는 Python 2.72 버전으로 구현하였습니다.
+
+국내 SK Telecom과에서 서비스 중인 Cat.M1의 경우 IPv6 주소만 사용하므로 서버 IPv4 주소를 다음과 같이 변환하여 사용해야 합니다.
 
 ```python
 import socket
@@ -51,28 +55,29 @@ from os.path import exists
 import time,datetime
 import os
 
-HOST = '64:ff9b::de62:adcb'             //Prefix: 64:ff9b
-# HOST = '222.98.163.203'               //각 IP 주소를 Hexa값으로 변환 (222->de)
+HOST = '64:ff9b::de62:adcb'             // Prefix: 64:ff9b
+# HOST = '222.98.163.203'               // 각 IP 주소를 Hexa값으로 변환 (222->de)
 ```
 
-전체적인 소스의 흐름은 Raspberry Pi Camera를 이용하여 사진을 찍은 후, 지정된 IP의 서버로 파일 전송을 합니다.
+전체 소스 코드의 동작은 Raspberry Pi Camera를 이용하여 사진을 찍은 후, 지정된 IP의 서버로 이미지 파일을 전송하도록 구현되어 있습니다.
 
 ```python
-os.system("raspistill -o test.jpg -t 500 -q 5")       //사진 촬영
+os.system("raspistill -o test.jpg -t 500 -q 5")       // 사진 촬영
 
-filename = "test.jpg"                                 //보낼 파일 이름
-fileSize = os.path.getsize("test.jpg")                //파일 사이즈 출력
+filename = "test.jpg"                                 // 보낼 파일 이름
+fileSize = os.path.getsize("test.jpg")                // 파일 사이즈 출력
 print("File size is : ", str(fileSize))
 fileInfo = filename + ","+str(fileSize)
-sendFileToServer(fileInfo)                            //sendFileToServer 메소드를 이용하여 파일 전송
+sendFileToServer(fileInfo)                            // sendFileToServer 메소드를 이용하여 파일 전송
 
 ```
 
-세부 소스는 하단의 링크를 확인해주세요.
-
-
 ### 2. PC GUI Program
-PC 환경에서 사진을 받는 서버는 pyQt를 이용하여 GUI 프로그래밍을 하였으며, Server Open 버튼을 통해 구동할 수 있습니다. GUI 프로그램의 진행 상태 막대를 통해 라즈베리 파이에서 전송 중인 사진의 진행상태를 확인할 수 있고, 수신한 이미지를 확인할 수 있도록 하였습니다.
+PC 환경에서 이미지 데이터를 수신 할 서버를 구현합니다.
+
+데이터 수신 서버는 pyQt를 이용하여 GUI 프로그램으로 구현 하였으며, `Server Open` 버튼을 눌러 동작을 시작합니다. 
+
+프로그램 상단의 Progress status bar를 통해 Raspberry Pi + WIZnet IoT Shield 에서 보내 온 이미지 데이터의 수신 현황을 알 수 있으며, 이미지도 함께 확인 할 수 있도록 구성하였습니다.
 
 ![][2]
 
@@ -122,12 +127,14 @@ def resetProgressbar(self):
     self.progressBar.setValue(100)
 ```
 
-전체 소스 코드: **[링크 바로가기][link-github]**
+전체 소스 코드는 아래 링크에서 확인 할 수 있습니다.
+> GitHub Repository: **[LTECatM1-RaspberryPi-Photo-Transfer-Application][link-github]**
 
 <a name="Step-3-Video"></a>
 ## 동작 영상
 
-동작 영상은 **[Youtube 동영상][link-youtube]** 을 참고해 주기시 바랍니다.
+동작 영상은 **[Youtube 데모 동영상][link-youtube]** 을 참고해 주기시 바랍니다.
+
 ![][3]
 
 <a name="Step-4-Verification"></a>
@@ -139,7 +146,7 @@ def resetProgressbar(self):
 ![][4]
 
 
- [raspberry-pi-getting-started]: https://
+ [raspberry-pi-getting-started]: ./Raspberrypi_get_started.md
  [skt-iot-portal]: https://www.sktiot.com/iot/developer/guide/guide/catM1/menu_05/page_01
  [link-woorinet]: http://www.woori-net.com
  [link-wiznet]: https://www.wiznet.io
