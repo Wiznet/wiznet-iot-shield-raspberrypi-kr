@@ -127,7 +127,7 @@ def resetProgressbar(self):
 <a name="Step-3-Video"></a>
 ## 동작 영상
 
-동작 영상은 **[Youtube 동영상][link-youtube]**을 참고해 주기시 바랍니다.
+동작 영상은 **[Youtube 동영상][link-youtube]** 을 참고해 주기시 바랍니다.
 ![][3]
 
 <a name="Step-4-Verification"></a>
