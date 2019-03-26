@@ -47,7 +47,7 @@ LTE Cat.M1의 경우 Sigfox, LoRa, NB-IoT 대비 높은 전송 속도를 지원 
 
 Raspberry Pi의 이미지 전송 Client는 Python 2.72 버전으로 구현하였습니다.
 
-국내 SK Telecom과에서 서비스 중인 Cat.M1의 경우 IPv6 주소만 사용하므로 서버 IPv4 주소를 다음과 같이 변환하여 사용해야 합니다.
+국내 SK Telecom에서 서비스 중인 Cat.M1의 경우 IPv6 주소만 사용하므로 서버 IPv4 주소를 다음과 같이 변환하여 사용해야 합니다.
 
 ```python
 import socket
