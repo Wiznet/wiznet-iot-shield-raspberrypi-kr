@@ -154,7 +154,35 @@ OK
 
 #### 3. WIoT-AM01 RNDIS 설정
 
-> 준비 중입니다.
+Cat.M1 모듈을 RNDIS 모드로 사용하기 위해서는 다음과 같은 AT 명령어를 통해 설정이 필요하며, 정상적으로 변경이 되면 모듈은 자동으로 재부팅을 수행합니다.
+
+##### 3.1 RNDIS 모드 설정
+
+**AT Command:** AT@USBCHG=RNDIS
+
+| Type | Syntax | Response | Example
+|:--------|:--------|:--------|:--------|
+| Write  | AT@USBCHG=(Mode) | @USBCHG:(Mode)<br><br>OK | AT@USBCHG=RNDIS<br>@USBCHG:RNDIS<br><br>OK<br> |
+
+**Defined values:**
+
+| Parameter | Type | Description |
+|:--------|:--------|:--------|
+| (Mode) | String | ACM : USB 인터페이스를 ACM 모드로 설정<br>RNDIS : USB 인터페이스를 RNDIS 모드로 설정<br>RMNET : USB 인터페이스를 RMNET 모드로 설정 |
+
+##### 3.2 WIoT-AM01 RNDIS 동작 구조 예제
+
+```
+/* AMM592SK RNDIS 모드 설정 */
+
+// RNDIS 모드 설정
+AT@USBCHG=RNDIS
+@USBCHG:RNDIS
+
+OK
+
+// 모듈은 자동으로 재부팅
+```
 
 <a name="Step-3-ConnectConfirm"></a>
 
