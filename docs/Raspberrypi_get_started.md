@@ -36,9 +36,11 @@ UART 인터페이스를 통해 AT 커맨드를 이용하여 데이터 송수신�
   - **[Raspberry Pi 2 Model B][link-raspberry-pi purchase]**
   - WIZnet IoT Shield
   - Cat.M1 Interface Board (택 1)
-    - WIoT-QC01 (앰투앰넷 BG96) :heavy_check_mark:
+    - ~~WIoT-QC01 (앰투앰넷 BG96)~~
     - WIoT-WM01 (우리넷 WM-N400MSE) :heavy_check_mark:
     - WIoT-AM01 (AM텔레콤 AMM5918K)
+
+> WIoT-QC01 (BG96)은 국내 IPv6 전용 환경에 대해 추후 지원 예정
 
 - **Cat.M1 모듈의 (시험 망)개통**
   - Cat.M1 모듈로 통신 기능을 구현하려면 **망 개통 과정** 이 선행되어야 합니다.
@@ -56,7 +58,7 @@ UART 인터페이스를 통해 AT 커맨드를 이용하여 데이터 송수신�
 WIZnet IoT Shield를 Raspberry Pi 하드웨어와 연결합니다.
 - Raspberry Pi와 연결하기 위해서는 Cat.M1 모듈을 RNDIS 모드로 설정해야 하며, RNDIS 모드로 사용할 경우에는 IoT Shield의 `P2 USB HOST` 포트를 사용합니다.
 
-![][hw-raspberrypi-connect-qc01]
+![][hw-raspberrypi-connect-wm01]
 
 
 IoT Shield는 다양한 밴더의 Cat.M1 모듈을 활용 할 수 있도록 하드웨어 설정을 제공합니다. 따라서 선택한 Cat.M1 Interface Board를 확인하여 장치 설정이 필요합니다.
@@ -67,7 +69,7 @@ IoT Shield는 다양한 밴더의 Cat.M1 모듈을 활용 할 수 있도록 하�
 Raspberry Pi와 WIZnet IoT Shield를 연결하는 경우, 인터페이스 보드에 따른 하드웨어 설정은 다음과 같습니다.
 
 
-| :heavy_check_mark: WIoT-QC01 Jumper settings<bR> | WIoT-WM01 Jumper settings | WIoT-AM01 Jumper settings |
+| WIoT-QC01 Jumper settings<bR> | :heavy_check_mark: WIoT-WM01 Jumper settings | WIoT-AM01 Jumper settings |
 |:--------------------------:|:--------------------------:|:--------------------------:|
 |![][hw-settings-nucleo-qc01]|![][hw-settings-nucleo-wm01]|![][hw-settings-nucleo-am01]|
 
@@ -87,7 +89,7 @@ Raspberry Pi와 WIZnet IoT Shield를 연결하는 경우, 인터페이스 보드
 
 #### 1. WIoT-QC01 RNDIS 설정
 
-WIoT-QC01의 경우 별도의 설정이 필요 없습니다.
+> WIoT-QC01 (BG96)은 국내 IPv6 전용 환경에 대해 추후 지원 예정
 
 
 #### 2. WIoT-WM01 RNDIS 설정
