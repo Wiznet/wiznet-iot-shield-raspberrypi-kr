@@ -24,7 +24,9 @@
 
 | MCU Board | IoT Shield Interface Board |
 |:--------:|:--------|
-| [Raspberry Pi 2 Model B][link-raspberry-pi purchase] | WIoT-QC01 (BG96)<br>WIoT-WM01 (WM-N400MSE)<br>WIoT-AM01 (AMM5918K) |
+| [Raspberry Pi 2 Model B][link-raspberry-pi purchase] | ~~WIoT-QC01 (BG96)~~<br>WIoT-WM01 (WM-N400MSE)<br>WIoT-AM01 (AMM5918K) |
+
+> WIoT-QC01 (BG96)은 국내 IPv6 전용 환경에 대해 추후 지원 예정
 
 <a name="Step-1-Overview"></a>
 ## 소개
