@@ -23,6 +23,9 @@ Raspberry Pi 및 PC에서 동작 시킬 수 있는 예제 코드가 위치합니
 ## Other WIZnet IoT Shield Repository
 **[wiznet-iot-shield](https://github.com/Wiznet/wiznet-iot-shield-kr/)** 저장소를 방문하면 다른 플랫폼 보드를 기반으로 동작하는 다양한 예제에 대한 저장소 리스트를 확인 할 수 있습니다.
 
+## IoT 오픈 하우스
+
+[IoT 오픈 하우스](https://github.com/Wiznet/IoTOpenHouse/)를 방문하시거나 [SK텔레콤 IoT 서포트 신청](http://b2b.tworld.co.kr/cs/counsel/iotOpenHouse.bc/)을 하시면, LoRa, Cellular(Cat M1), WiFi, Ethernet 등을 활용한 IoT 개발에 대한 컨설팅과 상용화를 위한 지원을 무상으로 받으실 수 있습니다.
 
 ## Support
 
